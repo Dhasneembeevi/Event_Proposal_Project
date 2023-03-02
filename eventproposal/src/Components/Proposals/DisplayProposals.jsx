@@ -10,9 +10,11 @@ const DisplayProposals = () => {
       res.json()
     })
     .then((data)=>{
+      console.log(data)
       getProposal(data)
     })
     .catch((err)=>console.log(err))
+    console.log(proposal)
   }, [proposal])
 
   return (
@@ -21,8 +23,8 @@ const DisplayProposals = () => {
       {proposal?.proposals?.map?.((proposal,index)=>{
         return(
           <div className='container' key={index}>
-          <div> <img src={} alt="proposal" /></div>
-          <div>{proposal.vendorName}</div>
+          <div> <img src={`http://localhost`} alt="proposal" /></div>
+          <div>{proposal.eventName}</div>
           <div> {proposal.budget}</div>
           <div>{proposal.place}</div>
           </div>
@@ -35,3 +37,4 @@ const DisplayProposals = () => {
 }
 
 export default DisplayProposals
+ //<div> <img src={} alt="proposal" /></div>
