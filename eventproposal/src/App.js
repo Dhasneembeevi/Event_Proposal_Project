@@ -3,12 +3,13 @@ import Home from "../src/Components/Home"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //import Toaster from 'react-hot-toast';
 import UserRegister from "./Components/User/UserRegister";
-import UserLogin from "./Components/User/UserLogin";
+import Login from "./Components/User/UserLogin";
 import VendorLogin from "./Components/Vendor/VendorLogin";
 import VendorRegister from "./Components/Vendor/VendorRegister";
 import DisplayProposals from './Components/Proposals/DisplayProposals';
 import CreateProposals from './Components/Proposals/CreateProposals';
-
+import Details from './Components/Proposals/Details';
+import Events from './Components/Proposals/Events';
 
 function App() {
   return (
@@ -18,12 +19,14 @@ function App() {
 
         <Routes >
           <Route path='/' element={<Home />} />
-          <Route path='/userlogin' element={<UserLogin />} />
-          <Route path='/userregister' element={<UserRegister />} />
-          <Route path='/vendorlogin' element={<VendorLogin />} />
-          <Route path='/vendorregister' element={<VendorRegister />} />
+          <Route path='/loginuser' element={<Login />} />
+          <Route path='/registeruser' element={<UserRegister />} />
+          <Route path='/loginvendor' element={<VendorLogin />} />
+          <Route path='/registervendor' element={<VendorRegister />} />
           <Route path='/allproposals' element={<DisplayProposals />} />
           <Route path='/createproposals' element={<CreateProposals />} />
+          <Route path='/details' element={<Details />} />
+          <Route path='/events' element={<Events />} />
         </Routes>
       </Router>
     </div>
