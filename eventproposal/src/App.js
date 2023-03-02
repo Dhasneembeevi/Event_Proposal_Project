@@ -8,16 +8,17 @@ import VendorLogin from "./Components/Vendor/VendorLogin";
 import VendorRegister from "./Components/Vendor/VendorRegister";
 import DisplayProposals from './Components/Proposals/DisplayProposals';
 import CreateProposals from './Components/Proposals/CreateProposals';
-import Header from "./Components/Header"
+
+
 
 function App() {
   return (
     <div>
      
       <Router>
-        <Header/>
+        
         <Routes >
-          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path='/userlogin' element={<UserLogin />} />
           <Route path='/userregister' element={<UserRegister />} />
           <Route path='/vendorlogin' element={<VendorLogin />} />
