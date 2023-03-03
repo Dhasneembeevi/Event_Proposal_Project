@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import Header from './Header';
 // summary page --> proposals selected by user
 
 const Details = () => {
@@ -19,15 +20,20 @@ const Details = () => {
     
       return (
         <div>
-        <h1>ALL Proposalss</h1>
+        <h1>one Proposal's details pages summary</h1>
+        <Header/>
           <div className='allproposals'>
           {proposal?.proposals?.map?.((proposal,index)=>{
             return(
               <div className='container' key={index}>
              <div ><img src='https://t4.ftcdn.net/jpg/01/20/28/25/360_F_120282530_gMCruc8XX2mwf5YtODLV2O1TGHzu4CAb.jpg' alt='event'/></div>
-              <div>{proposal.eventName}</div>
+              <div>{proposal?.proposals?.proposal.eventName}</div>
               <div> {proposal.budget}</div>
               <div>{proposal.eventPlace}</div>
+              <div>{proposal. foodPreferences}</div>
+              <div>{proposal.events}</div>
+              <div>{proposal.images}</div>
+              <div>contact : 9898989898</div>
               </div>
             )
           })}

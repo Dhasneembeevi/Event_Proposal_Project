@@ -1,5 +1,5 @@
 import './App.css';
-import Home from "../src/Components/Home"
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //import Toaster from 'react-hot-toast';
 import UserRegister from "./Components/User/UserRegister";
@@ -10,6 +10,7 @@ import DisplayProposals from './Components/Proposals/DisplayProposals';
 import CreateProposals from './Components/Proposals/CreateProposals';
 import Details from './Components/Proposals/Details';
 import Events from './Components/Proposals/Events';
+import Eventheader from './Components/Proposals/Eventheader';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Router>
 
         <Routes >
-          <Route path='/' element={<Home />} />
+       
           <Route path='/loginuser' element={<Login />} />
           <Route path='/registeruser' element={<UserRegister />} />
           <Route path='/loginvendor' element={<VendorLogin />} />
@@ -27,6 +28,7 @@ function App() {
           <Route path='/createproposals' element={<CreateProposals />} />
           <Route path='/details' element={<Details />} />
           <Route path='/events' element={<Events />} />
+          <Route path='/eventheader' element={<Eventheader />} />
         </Routes>
       </Router>
     </div>

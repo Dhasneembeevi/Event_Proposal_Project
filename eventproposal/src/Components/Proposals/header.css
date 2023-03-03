@@ -1,0 +1,46 @@
+.head {
+   display: flex;
+   width: 99.7%;
+height: 70px;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 6px #00000029;
+border: 1px solid #FFFFFF;
+opacity: 1;
+margin-top:15px;
+
+}
+
+.logo {
+    margin-bottom: 50px;
+    margin-left: 50px;
+    width: 95px;
+    height: 63px;
+    text-align: left;
+    font: normal normal bold 32px/43px Open Sans;
+    letter-spacing: 1.28px;
+    color: #64A1F5;
+    opacity: 1;
+}
+
+.vendor {
+    margin-top: -13px;
+    width: 106px;
+    height: 22px;
+    font: normal normal 600 16px/22px Open Sans;
+    letter-spacing: 0px;
+    color: #64A1F5;
+    opacity: 1;
+    margin-left: 1200px;
+}
+
+.img {
+    margin-top: -19px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    opacity: 1;
+    margin-left: 10px;
+}
+.name{
+    display: flex;
+}

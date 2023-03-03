@@ -2,7 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 // display proposals created by vendor
-
+import "./display.css"
+import Header from "./Header";
+import img3 from "../../Assets/bg party.jpg";
 const DisplayProposals = () => {
   const [proposal, getProposal] = useState([]);
   useEffect(()=>{
@@ -20,9 +22,10 @@ const DisplayProposals = () => {
 
   return (
     <div>
-    <h1>one Proposal</h1>
-    
-    <Link to="/details">
+ 
+    <Header/>
+    <img src={img3} id="image" alt="user" />
+    <Link to="/details" className='link' style={{textDecoration:"none"}}>
       <div className='allproposals'>
       {proposal?.proposals?.map?.((proposal,index)=>{
         return(
@@ -31,7 +34,7 @@ const DisplayProposals = () => {
           <div>{proposal.eventName}</div>
           <div> {proposal.budget}</div>
           <div>{proposal.eventPlace}</div>
-    
+  
           </div>
         )
       })}
