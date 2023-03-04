@@ -2,8 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 // display proposals created by vendor
+
 import "./display.css"
-import Header from "./Header";
+import Userhead from '../User/Userhead'
 import img3 from "../../Assets/bg party.jpg";
 const DisplayProposals = () => {
   const [proposal, getProposal] = useState([]);
@@ -23,7 +24,7 @@ const DisplayProposals = () => {
   return (
     <div>
  
-    <Header/>
+    <Userhead/>
     <img src={img3} id="image" alt="user" />
     <Link to="/details" className='link' style={{textDecoration:"none"}}>
       <div className='allproposals'>

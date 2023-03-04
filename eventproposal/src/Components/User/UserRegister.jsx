@@ -6,6 +6,7 @@ import img2 from "../../Assets/logo.jpg";
 import img1 from "../../Assets/bg party.jpg";
 import "./userregister.css"
 
+
 // vendor has to register 
 
 const Register = () => {
@@ -35,13 +36,13 @@ const Register = () => {
       updatemsg(<div className="new2">user already exists</div>)
     }
     else{
-      navigate('/allproposals')
+      navigate('/loginuser')
     }
   }
 }
-const handle = () =>{
-  navigate("/loginuser")
-}
+// const handle = () =>{
+//   navigate("/loginuser")
+// }
 const handleSymbol =()=>{
   navigate("/loginvendor")
 }
@@ -55,8 +56,10 @@ const handleSymbol =()=>{
   <Link to="/registeruser"><button className='user-btn'>User</button> </Link>
 
   <div className='signup-text'>Register in Your Account </div>
-  <div className='input-box' >     <input type="text" placeholder='Name' className='phone-input' value={data.username} onChange={(e) => { updatereg({ ...data, username: e.target.value }) }} />
-    
+  <div className='input-box' >     
+  <input type="text" placeholder='Name' className='phone-input' value={data.username} onChange={(e) => { updatereg({ ...data, username: e.target.value }) }} />
+
+
     <input type="email" placeholder='Email' className="email-input" value={data.email} onChange={(e) => { updatereg({ ...data, email: e.target.value }) }}/>
     
     
@@ -67,7 +70,7 @@ const handleSymbol =()=>{
     <input type="password" placeholder='Confirm Password' className='confirm-password-input' value={data.confirmPassword} onChange={(e) => { updatereg({ ...data, confirmPassword: e.target.value }) }}/>
  
 
-<Link to="/loginuser" className='login-user' onClick={handle} >Login </Link>
+<Link to="/loginuser" className='login-user'  >Login </Link>
 <span > <button onClick={handlereg} className="register" >REGISTER </button></span>
 
     {msg}

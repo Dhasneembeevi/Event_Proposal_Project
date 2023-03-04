@@ -13,8 +13,8 @@
   .logot {
     font-weight: bold;
     color: rgb(62, 159, 192);
-    font-size: 1.5rem;
-    margin-right: auto; /* this will align the logo to the right */
+    font-size: 2.5rem;
+    margin-left: 20px; /* this will align the logo to the right */
   }
   
   .vendort {
