@@ -2,15 +2,21 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./vendorlogin.css"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useSignIn } from 'react-auth-kit';
 import img2 from "../../Assets/logo.jpg";
 import img1 from "../../Assets/bg party.jpg";
 const VendorLogin = () => {
   const [data , updatelogin] = useState({contact:"" , password:""})
-    const [msg , updatemsg] = useState()
+    const [msg , updatemsg] = useState();
+    const Login = useSignIn();
+
     const naviagte = useNavigate()
 
     const handlelogin = async () =>{
+
+      localStorage.setItem("contact")
+      localStorage.setItem("password")
       const formdata = new FormData()
       formdata.append("contact", data.contact)
       formdata.append("password", data.password)
@@ -19,6 +25,7 @@ const VendorLogin = () => {
         body: formdata
       })
   
+      Login()
       const resp = await response.json()
       if(resp.status === "failure"){
           updatemsg(<div className="msg2">Vendor not found</div>)
@@ -56,9 +63,10 @@ naviagte("/loginvendor")
     <p className='forgot-text'>Forgot Password.?</p>
     <div className="link-buttons">      
     <Link to="/registeruser" className='create-user' onClick={handle} >Create Account</Link>
-    <Link to="/events"><span ><button  onClick={handlelogin}  className="sign-in">Login</button></span></Link>
-    
-    {msg}
+    <span ><button  onClick={handlelogin}  className="sign-in">Login</button></span>
+    <div className='msg'>{msg}
+    </div>
+    <div>{localStorage.getItem("contact")}</div>
     </div>
     </div>
     </div>

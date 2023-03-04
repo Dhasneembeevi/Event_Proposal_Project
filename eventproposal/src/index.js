@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {AuthProvider} from "react-auth-kit"
 
 import App from './App';
 
@@ -9,3 +10,7 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+
+
+

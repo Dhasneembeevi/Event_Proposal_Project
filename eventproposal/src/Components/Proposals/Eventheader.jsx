@@ -1,19 +1,37 @@
-import React from 'react'
-import {FaFilter} from "react-icons/fa"
-import { Link } from 'react-router-dom'
-import "./eventheader.css"
-const Eventheader = () => {
+import React, { useState, useEffect } from 'react';
+
+const SearchComponent = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [proposals, setProposals] = useState([]);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`http://localhost:5000/allproposals?q=${searchQuery}`);
+      const data = await response.json();
+      setProposals(data);
+    }
+    fetchData();
+  }, [searchQuery]);
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
   return (
-    <div className='head'>
-      <h1 className='pro'> Proposals </h1>
-<input type="search" placeholder="Search projects" className='search'/>
-<span className='filter'><FaFilter/></span>
-<Link to="/createproposals">
-<button className='cre'> CREATE </button></Link>
-
-
+    <div>
+      <input 
+        type="search" 
+        placeholder="Search proposals"
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
+      {proposals.map((proposal) => (
+        <div key={proposal.id}>{proposal.title}</div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Eventheader;
+export default SearchComponent;
+
+

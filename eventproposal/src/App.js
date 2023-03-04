@@ -24,7 +24,7 @@ function App() {
           <Route path='/registeruser' element={<UserRegister />} />
           <Route path='/loginvendor' element={<VendorLogin />} />
           <Route path='/registervendor' element={<VendorRegister />} />
-          <Route path='/allproposals' element={<DisplayProposals />} />
+          <Route path='/' element={<DisplayProposals />} />
           <Route path='/createproposals' element={<CreateProposals />} />
           <Route path='/details' element={<Details />} />
           <Route path='/events' element={<Events />} />
@@ -38,15 +38,4 @@ function App() {
 }
 
 export default App;
- // <Toaster
-
-      //   position="top-center"
-      //   toastOptions={{
-      //     success: {
-      //       theme: {
-      //         primary: (36, 185, 135)
-      //       }
-      //     }
-      //   }}
-      // >
-      // </Toaster>
+ 
