@@ -1,67 +1,97 @@
-
-
-
-#events-container{
+.ev {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #events-container {
     display: flex;
     flex-direction: column;
-    margin-top:2rem;
-width: 1420px;
-height: 108px;
-/* UI Properties */
-background: #FFFFFF 0% 0% no-repeat padding-box;
-opacity: 1;
-margin-bottom: 2rem;
-
-}
-
-#container {
+    align-items: center;
+  }
+  
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #ename {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 90%;
+  }
+  
+  #damn {
+    margin: 10px 0;
+    margin-right: 90%;
+  }
+  
+  #et {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .proty {
     margin-left: 10px;
-    
-    width: 1421px;
-    height: 156px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    border: 1px solid #425E81;
-    border-radius: 4px;
-    opacity: 1;
-
-}
-#ename{
-    margin-left: 15px;
-    margin-top:10px;
-}
-#et{
+  }
+  
+  .fdate {
+    margin-left: 10px;
+  }
+  
+  .tdate {
+    margin-left: 10px;
+  }
+  
+  #bud {
+    margin-left: 10px;
+  }
+  
+  #fi-ev {
     display: flex;
-    justify-content: space-evenly;
-    margin-left: -169px;
-    margin-top: 10px;
-    font-weight: 700;
-    color: rgb(173, 203, 203);
-
-}
-#description {
-    margin-left: 15px;
-    margin-top:10px;
-    /* UI Properties */
-    text-align: left;
-    font: normal normal normal 16px/18px Helvetica Neue;
-    letter-spacing: 0.48px;
-    color: #081838;
-    opacity: 1;
-}
-#trash{
-    margin-right: 15px;
-}
-#fi-ev{
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  #icon {
     display: flex;
-    justify-content: space-evenly;
-    margin-left: -140px;
-    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 92%;
+  }
+  
+  #trash {
+    margin-right: 10px;
 
-}
-#icon{
-    display: flex;
-    margin-left: 90%;
-    margin-right:12px;
-    margin-bottom: 2rem;
-}
+    color: red;
+    cursor: pointer;
+  }
+  
+  #trash:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  #edit {
+    margin-left: 10px;
+    color: green;
+    cursor: pointer;
+  }
+  
+  #edit:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+  }

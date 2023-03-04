@@ -56,9 +56,10 @@ naviagte("/loginvendor")
     <p className='forgot-text'>Forgot Password.?</p>
     <div className="link-buttons">      
     <Link to="/registeruser" className='create-user' onClick={handle} >Create Account</Link>
-    <Link to="/events"><span ><button  onClick={handlelogin}  className="sign-in">Login</button></span></Link>
+    <span ><button  onClick={handlelogin}  className="sign-in">Login</button></span>
+    <div className='msg'>{msg}
+    </div>
     
-    {msg}
     </div>
     </div>
     </div>

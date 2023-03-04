@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Header from './Header';
+import Userhead from '../User/Userhead';
 // summary page --> proposals selected by user
-
+import "./details.css"
 const Details = () => {
       const [proposal, getProposal] = useState([]);
       useEffect(()=>{
@@ -20,23 +20,20 @@ const Details = () => {
     
       return (
         <div>
-        <h1>one Proposal's details pages summary</h1>
-        <Header/>
+        
+        <Userhead/>
           <div className='allproposals'>
-          {proposal?.proposals?.map?.((proposal,index)=>{
-            return(
-              <div className='container' key={index}>
-             <div ><img src='https://t4.ftcdn.net/jpg/01/20/28/25/360_F_120282530_gMCruc8XX2mwf5YtODLV2O1TGHzu4CAb.jpg' alt='event'/></div>
-              <div>{proposal?.proposals?.proposal.eventName}</div>
-              <div> {proposal.budget}</div>
-              <div>{proposal.eventPlace}</div>
-              <div>{proposal. foodPreferences}</div>
-              <div>{proposal.events}</div>
-              <div>{proposal.images}</div>
-              <div>contact : 9898989898</div>
-              </div>
-            )
-          })}
+          {proposal?.proposals?.map?.((proposal, index)=>{
+  return(
+    <div className='container' key={index}>
+      <div ><img src='https://t4.ftcdn.net/jpg/01/20/28/25/360_F_120282530_gMCruc8XX2mwf5YtODLV2O1TGHzu4CAb.jpg' alt='event'/></div>
+      <div>{proposal.eventName}</div>
+      <div> {proposal.budget}</div>
+      <div>{proposal.eventPlace}</div>
+    </div>
+  )
+})}
+
           
           </div>
         </div>

@@ -114,7 +114,8 @@ opacity: 1;
 .sign-in{
     height: 2rem;
     width:6rem;
-    margin-left:-30%;
+    position: fixed;
+    left: 110%;
     background: #4E94F4 0% 0% no-repeat padding-box;
   border-radius: 8px;
   color: aliceblue;
@@ -126,4 +127,12 @@ opacity: 1;
 .sign-in:hover{
     background-color: #1b5ab2;
     cursor: pointer;
+}
+.msg{
+    margin-top: 40px;
+    position: relative;
+    right: 45%;
+    color: red;
+    font-style: normal;
+    font-size: 20px;
 }

@@ -35,7 +35,7 @@ const Register = () => {
         updatemsg(<div className="new2">User already exists</div>)
       }
       else{
-        navigate('/events')
+        navigate('/loginvendor')
       }
     }
   }
@@ -66,9 +66,9 @@ const Register = () => {
   
         <input type="password" placeholder='Confirm Password' className='confirm-password-input' value={data.confirmPassword} onChange={(e) => { updatereg({ ...data, confirmPassword: e.target.value }) }}/>
         <Link to="/loginvendor" className='login-user' onClick={handle} >Login </Link>
-    <Link to="/loginvendor">
+   
     <span > <button onClick={handlereg} className="register" >REGISTER </button></span>
-    </Link>
+
         {msg}
          </div>      
     
