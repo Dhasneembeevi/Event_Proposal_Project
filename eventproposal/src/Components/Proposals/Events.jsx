@@ -8,7 +8,7 @@ const Events = () => {
   const [proposal, setProposal] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allproposals")
+    fetch("https://event-proposal-project.onrender.com/allproposals")
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
@@ -21,7 +21,7 @@ const Events = () => {
     const proposalId = proposal[index]._id;
     console.log(proposalId)
     const updatedProposal = prompt('Enter updated proposal data');
-    fetch(`http://localhost:5000/update/${proposalId}`, {
+    fetch(`https://event-proposal-project.onrender.com/update/${proposalId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedProposal)
@@ -38,7 +38,7 @@ const Events = () => {
     event.preventDefault();
     const proposalId = proposal[index]._id;
     console.log(proposalId)
-    fetch(`http://localhost:5000/delete/${proposalId}`, { method: 'DELETE' })
+    fetch(`https://event-proposal-project.onrender.com/delete/${proposalId}`, { method: 'DELETE' })
       .then(response => response.json())
       .then(() => {
         const updatedProposals = proposal.filter((_, i) => i !== index);

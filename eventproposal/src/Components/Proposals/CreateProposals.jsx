@@ -38,7 +38,7 @@ const CreateProposals = () => {
         formdata.append('images', image)
       }
       
-      await axios.post('http://localhost:5000/createproposals', formdata
+      await axios.post('https://event-proposal-project.onrender.com/createproposals', formdata
 )
       
         navigate('/events')

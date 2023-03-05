@@ -15,7 +15,7 @@ const VendorLogin = () => {
       const formdata = new FormData()
       formdata.append("contact", data.contact)
       formdata.append("password", data.password)
-      const response = await fetch("http://localhost:5000/loginvendor", {
+      const response = await fetch("https://event-proposal-project.onrender.com/loginvendor", {
         method: 'POST',
         body: formdata
       })
