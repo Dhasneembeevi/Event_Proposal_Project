@@ -1,14 +1,24 @@
 import React from 'react';
 import './header.css';
 import { Link, useNavigate } from 'react-router-dom';
-
+import Swal from "sweetalert2";
 const Header = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     // perform logout logic here
     // ...
-    navigate('/loginvendor', { replace: true }); // navigate to login page without adding to the history stack
+    navigate('/loginvendor', { replace: true }); 
+    Swal.fire({
+      title: 'Vendor logged out successfully',
+      icon: 'success',
+      showClass: {
+         popup: 'animate_animated animate_fadeInDown'
+      },
+      hideClass: {
+         popup: 'animate_animated animate_fadeOutUp'
+      }
+   })// navigate to login page without adding to the history stack
   };
 
   return (

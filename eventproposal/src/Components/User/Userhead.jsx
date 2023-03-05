@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./userhead.css"
 import { Link, useNavigate } from 'react-router-dom'
-
+import Swal from "sweetalert2";
 const Header = () => {
   const [loggedIn, setLoggedIn] = useState(true)
   const navigate = useNavigate()
@@ -10,6 +10,16 @@ const Header = () => {
     // perform logout action here, e.g. clear local storage, reset state, etc.
     setLoggedIn(false)
     navigate('/loginuser', { replace: true })
+    Swal.fire({
+      title: 'User logged out successfully',
+      icon: 'success',
+      showClass: {
+         popup: 'animate_animated animate_fadeInDown'
+      },
+      hideClass: {
+         popup: 'animate_animated animate_fadeOutUp'
+      }
+   })
   }
 
   return (

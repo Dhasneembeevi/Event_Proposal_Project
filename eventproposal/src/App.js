@@ -11,6 +11,7 @@ import CreateProposals from './Components/Proposals/CreateProposals';
 import Details from './Components/Proposals/Details';
 import Events from './Components/Proposals/Events';
 import Eventheader from './Components/Proposals/Eventheader';
+import Selected from './Components/Proposals/Selected';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path='/details' element={<Details />} />
           <Route path='/events' element={<Events />} />
           <Route path='/eventheader' element={<Eventheader />} />
+          <Route path='/selected' element={<Selected />} />
         </Routes>
       </Router>
     </div>

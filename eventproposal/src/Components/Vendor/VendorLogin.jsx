@@ -5,6 +5,7 @@ import "./vendorlogin.css"
 import { Link } from "react-router-dom"
 import img2 from "../../Assets/logo.jpg";
 import img1 from "../../Assets/bg party.jpg";
+import Swal from "sweetalert2"
 const VendorLogin = () => {
   const [data , updatelogin] = useState({contact:"" , password:""})
     const [msg , updatemsg] = useState()
@@ -21,11 +22,27 @@ const VendorLogin = () => {
   
       const resp = await response.json()
       if(resp.status === "failure"){
-          updatemsg(<div className="msg2">Vendor not found</div>)
+        naviagte("/loginvendor")
+        {Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Vendor not found',
+       
+          })}
       }else if(resp.status === "failure2"){
           updatemsg(<div className="msg2">Invalid Password</div>)
       }else{
           naviagte("/events")
+          Swal.fire({
+            title: 'Vendor logged in successfully',
+            icon: 'success',
+            showClass: {
+               popup: 'animate_animated animate_fadeInDown'
+            },
+            hideClass: {
+               popup: 'animate_animated animate_fadeOutUp'
+            }
+         })
       }
   
   
