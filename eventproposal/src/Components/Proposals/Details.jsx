@@ -32,7 +32,7 @@ const Details = () => {
                 {proposal.images && (
                   <div id="ven-img">
                     <img
-                      src={`https://silly-shoulder-pads-lamb.cyclic.app/images/${proposal.images[0]}`}
+                      src={`https://event-proposal-project.onrender.com/images/${proposal.images[0]}`}
                       alt="event"
                     />
                   </div>
