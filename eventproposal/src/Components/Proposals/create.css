@@ -1,25 +1,30 @@
 :root {
   --border: 1px solid #CCCCCC;
+
 }
 
 .proposal-form-container {
-  width: 60vw;
+  width: 80vw;
+  height: 110vh;
+  
   margin:  auto;
   border: var(--border);
   border-radius: 12px;
   background-color: #FFFFFF;
+ 
 }
 
 .bg-proposal-form-container{
   
   background-size: cover;
-  padding: 150px 0 50px 0;
+  padding: 100px 0 50px 0;
   background-repeat: no-repeat;
   margin: 0;
 }
 
 .proposal-form-heading {
   text-align: center;
+  background-image: url("../../Assets/istockphoto-513550806-612x612.jpg");
   font-size: 2rem;
   letter-spacing: 0.78px;
   color: #393A3B;
@@ -94,6 +99,7 @@
 
 .proposal-form-btn-container>button {
   font-size: 1rem;
+  margin-top: 5%;
   padding: 0.5em 1em;
   background-color: #4E94F4;
   color: #FFFFFF;
@@ -111,22 +117,32 @@ input[type='file'] {
   border: var(--border);
 }
 
-.add-btn {
+ .add-btn {
+  float: right;
+  border: 1px solid #0078DD;
+  color: white;
+  background-color: #2D2D2E;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  padding: 0.5em 1em;
+  margin-right: 10%;
+} 
+/* .add-btn {
   float: right;
   border: 1px solid #0078DD;
   color: #006BD9;
   border-radius: 4px;
   font-size: 0.7rem;
   padding: 0.5em 1em;
-}
+} */
 
 .add-btn:hover{
-  background-color: #2D2D2E;
-  color: #FFFFFF;
+  background-color: #72e1eb;
+  color: #201f1f;
 }
 
 .images-preview {
-  width: 100%;
+  width: 90%;
   height: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -144,4 +160,14 @@ input[type='file'] {
 input, textarea,select {
   border: var(--border);
   outline: none
+}
+
+#diff-img{
+  width: 50%;
+}
+#food{
+  width: 90%;
+}
+#event{
+  width: 90%;
 }

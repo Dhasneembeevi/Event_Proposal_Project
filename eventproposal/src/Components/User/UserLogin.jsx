@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState } from "react"
 import "./userlogin.css"
 import { useNavigate } from "react-router-dom"
+import Swal from "sweetalert2";
 
 const Login = () =>{
     const [data , updatelogin] = useState({contact:"" , password:""})
@@ -19,11 +20,34 @@ const Login = () =>{
         })
         const resp = await response.json()
         if(resp.status === "failure"){
-            updatemsg(<div className="msg2">user not found</div>)
+            naviagte("/loginuser")
+            {Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'User not found',
+              
+              })}
+
         }else if(resp.status === "failure2"){
             updatemsg(<div className="msg2">Invalid Password</div>)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Invalid Password',
+                footer: '<a href="">Why do I have this issue?</a>'
+              })
         }else{
             naviagte("/")
+            Swal.fire({
+                title: 'User logged in successfully',
+                icon: 'success',
+                showClass: {
+                   popup: 'animate_animated animate_fadeInDown'
+                },
+                hideClass: {
+                   popup: 'animate_animated animate_fadeOutUp'
+                }
+             })
         }
     }
 

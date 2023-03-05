@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import img2 from "../../Assets/logo.jpg";
 import img1 from "../../Assets/bg party.jpg";
 import "./userregister.css"
-
+import Swal from "sweetalert2";
 
 // vendor has to register 
 
@@ -37,6 +37,16 @@ const Register = () => {
     }
     else{
       navigate('/loginuser')
+      Swal.fire({
+        title: 'User registered successfully',
+        icon: 'success',
+        showClass: {
+           popup: 'animate_animated animate_fadeInDown'
+        },
+        hideClass: {
+           popup: 'animate_animated animate_fadeOutUp'
+        }
+     })
     }
   }
 }

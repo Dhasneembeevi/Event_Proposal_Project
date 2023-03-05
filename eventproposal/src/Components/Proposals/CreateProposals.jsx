@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./create.css"
 import axios from "axios";
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 const CreateProposals = () => {
   const navigate = useNavigate();
@@ -54,8 +54,8 @@ const CreateProposals = () => {
     <section className="bg-proposal-form-container">
       <section className="proposal-form-container">
         <section className="proposal-form-heading">
-          <Link to={'/vendor'} className="go-back-btn">Go Back</Link>
-          <h1 >Create Proposal</h1>
+         
+          <h1 style={{color: "red"}} >Create Proposal</h1>
         </section>
         <form onSubmit={handleSubmit}>
           <div className="proposal-form-input-container">
@@ -160,16 +160,16 @@ const CreateProposals = () => {
             <div className="proposal-form-column">
               <div className="proposal-form-img-container">
                 <div className="input-container">
-                  <label htmlFor="image">Images<span className='add-btn'>Add</span></label>
-                  <input
-                    type="file"
-                    name="image"
-                    id="image"
-                    autoComplete="off"
-                    onChange={(e) => setImages([...images, ...e.target.files])}
-                    multiple="multiple"
-                    required
-                  />
+                <label htmlFor="image">Images<span className='add-btn'>Add</span></label>
+                <input
+                  type="file"
+                  name="image"
+                  id="image"
+                  autoComplete="off"
+                  onChange={(e) => setImages([...images, ...e.target.files])}
+                  multiple="multiple"
+                  required
+                />
                   <div className="images-preview">
                     {
                       images.map((image, index) => {
