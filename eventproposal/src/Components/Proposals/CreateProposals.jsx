@@ -38,7 +38,7 @@ const CreateProposals = () => {
         formdata.append('images', image)
       }
       
-      await axios.post('https://event-proposal-project.onrender.com/createproposals', formdata
+      await axios.post('https://silly-shoulder-pads-lamb.cyclic.app/createproposals', formdata
 )
       
         navigate('/events')

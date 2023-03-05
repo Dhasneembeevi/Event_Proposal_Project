@@ -8,7 +8,7 @@ const Events = () => {
   const [proposal, setProposal] = useState([]);
 
   useEffect(() => {
-    fetch("https://event-proposal-project.onrender.com/allproposals")
+    fetch("https://silly-shoulder-pads-lamb.cyclic.app/allproposals")
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
@@ -38,7 +38,7 @@ const Events = () => {
     event.preventDefault();
     const proposalId = proposal[index]._id;
     console.log(proposalId)
-    fetch(`https://event-proposal-project.onrender.com/delete/${proposalId}`, { method: 'DELETE' })
+    fetch(`https://silly-shoulder-pads-lamb.cyclic.app/delete/${proposalId}`, { method: 'DELETE' })
       .then(response => response.json())
       .then(() => {
         const updatedProposals = proposal.filter((_, i) => i !== index);
