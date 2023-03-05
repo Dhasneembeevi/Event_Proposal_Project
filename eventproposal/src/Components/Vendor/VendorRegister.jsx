@@ -26,7 +26,7 @@ const Register = () => {
       formdata.append("contact", data.contact)
       formdata.append("password", data.password);
       formdata.append("confirmpassword", data.confirmPassword)
-      const response = await fetch("http://localhost:5000/registervendor", {
+      const response = await fetch("https://event-proposal-project.onrender.com/registervendor", {
         method: 'POST',
         body: formdata
       })
@@ -85,27 +85,7 @@ const Register = () => {
   
         </div>
       </div>
-      // <div className='container1'> 
-      // <div className='user-register' style={{border: "1px solid black"}}>
-        
-      //   <input type="text" placeholder='Name' className='user-fields' value={data.username} onChange={(e) => { updatereg({ ...data, username: e.target.value }) }} />
-        
-      //   <input type="email" placeholder='Email' className='user-fields'  value={data.email} onChange={(e) => { updatereg({ ...data, email: e.target.value }) }}/>
-        
-        
-      //   <input type= "number" placeholder='Contact' value={data.contact} onChange={(e)=>{ updatereg({...data, contact: e.target.value})}} className='user-fields'/>
-  
-      //   <input type="password" placeholder='Password' className='user-fields' value={data.password} onChange={(e) => { updatereg({ ...data, password: e.target.value }) }}/>
-  
-      //   <input type="password" placeholder='Confirm Password' className='user-fields' value={data.confirmPassword} onChange={(e) => { updatereg({ ...data, confirmPassword: e.target.value }) }}/>
-        
-      //   <button onClick={handlereg} >REGISTER </button>
-      //   {msg}
-        
-  
-        
-      // </div>
-      // </div>
+
       
     )
   }

@@ -32,7 +32,7 @@ const Details = () => {
                 {proposal.images && (
                   <div id="ven-img">
                     <img
-                      src={`http://localhost:5000/images/${proposal.images[0]}`}
+                      src={`https://event-proposal-project.onrender.com/images/${proposal.images[0]}`}
                       alt="event"
                     />
                   </div>
@@ -56,7 +56,7 @@ const Details = () => {
             </div>
             <div id="fdp"  style={{fontSize: "larger", fontWeight:"bold"}}>Food Preferences : {proposal.foodPreferences}</div>
             <div id="mul-images"  style={{fontSize: "larger", fontWeight:"bold"}}>
-              My albums :<img src={`http://localhost:5000/images/${proposal.images}`} alt="random" style={{width
+              My albums :<img src={`https://event-proposal-project.onrender.com/images/${proposal.images}`} alt="random" style={{width
               :"30%" , marginBottom: "10px"}}
                />
               <img src="https://media.istockphoto.com/id/1281090402/photo/happy-new-year-to-all.jpg?s=612x612&w=0&k=20&c=zJB3jPor4WyNt3cKsfmzJufmH1CueAg7Tzlk7DNZtHM=" alt="fake" style={{width

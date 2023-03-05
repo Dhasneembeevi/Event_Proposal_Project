@@ -9,7 +9,7 @@ const DisplayProposals = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/allproposals")
+    fetch("https://event-proposal-project.onrender.com/allproposals")
       .then((res) => res.json())
       .then((data) => {
         setProposals(data.proposals);
@@ -31,7 +31,7 @@ const DisplayProposals = () => {
             <div className="container">
               {selectedProposal.images && (
                 <img
-                  src={`http://localhost:5000/images/${selectedProposal.images[0]}`}
+                  src={`https://event-proposal-project.onrender.com/images/${selectedProposal.images[0]}`}
                   alt={selectedProposal.eventName}
                 />
               )}
@@ -58,7 +58,7 @@ const DisplayProposals = () => {
               <div className="container">
                 {proposal.images && (
                   <img
-                    src={`http://localhost:5000/images/${proposal.images[0]}`}
+                    src={`https://event-proposal-project.onrender.com/images/${proposal.images[0]}`}
                     alt={proposal.eventName}
                   />
                 )}
