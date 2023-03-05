@@ -26,7 +26,7 @@ const Register = () => {
       formdata.append("contact", data.contact)
       formdata.append("password", data.password);
       formdata.append("confirmpassword", data.confirmPassword)
-      const response = await fetch("https://silly-shoulder-pads-lamb.cyclic.app/registervendor", {
+      const response = await fetch("https://event-proposal-project.onrender.com/registervendor", {
         method: 'POST',
         body: formdata
       })
