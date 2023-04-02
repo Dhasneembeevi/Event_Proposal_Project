@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import Userhead from "../User/Userhead";
+import { Link } from "react-router-dom"
+import Userhead from "../User/header/Userhead";
 import "./display.css";
 import img4 from "../../Assets/bg party.jpg"
 
 const DisplayProposals = () => {
   const [proposals, setProposals] = useState([]);
-  const [selectedProposal, setSelectedProposal] = useState(null);
-  const navigate = useNavigate();
+
 
   useEffect(() => {
-    fetch("https://event-proposal-project.onrender.com/allproposals")
+    fetch("https://dhas-proposal-server.onrender.com/allproposals")
       .then((res) => res.json())
       .then((data) => {
         setProposals(data.proposals);
@@ -18,67 +17,48 @@ const DisplayProposals = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleProposalClick = (proposal) => {
-    setSelectedProposal(proposal);
-    navigate("/details", { state: { proposal: proposal } });
-  };
-
   return (
     <div>
       <Userhead />
-      <h2 style={{marginLeft: "10%", fontWeight:"bolder", marginTop:"2%"}}> Selected </h2>
-      <div id="con-sel">
-      <img src={img4} style={{width:" 300px"}}/>
-      <div> Wedding</div>
-      <div>12,00,000</div>
-      <div> Bangalore</div>
-      
+      <h1 style={{ marginLeft: "13%", fontWeight: "bolder", marginTop: "2%" }}> Selected </h1>
+      <div className="card-container" style={{ textDecoration: "none", marginLeft: "7%", width: "17%" }}>
+        <div className="img-container">
+          <img src={img4} alt="selected" className="eventpic"/>
+          <div className="text-container" style={{ justifyContent: "center" }}>
+            <h2 id="en">Wedding</h2>
+            <h4>1200000</h4>
+            <p>Bangalore</p>
+            <Link to="/">
+            <button className="delete-button"> Delete</button></Link>
+          </div>
+        </div>
       </div>
-    
+
       <div className="allproposals">
-        {selectedProposal && (
-          <div className="selected">
-            <div className="container">
-              {selectedProposal.images && (
+      {proposals.map((proposal, index) => {
+        return (
+          <div
+            className="card-container"
+            style={{ textDecoration: "none" }}
+            key={index}
+            
+          >
+            <div className="img-container">
+              {proposal.images && (
                 <img
-                  src={`https://event-proposal-project.onrender.com/images/${selectedProposal.images[0]}`}
-                  alt={selectedProposal.eventName}
+                  src={`https://dhas-proposal-server.onrender.com/images/${proposal.images[0]}`}
+                  alt={proposal.eventName} className="eventpic"
                 />
               )}
-              <div id="en">{selectedProposal.eventName}</div>
-              <div>{selectedProposal.budget}</div>
-              <button
-                onClick={() => {
-                  setSelectedProposal(null);
-                }}
-              >
-                Clear Selection
-              </button>
-            </div>
-          </div>
-        )}
-        {proposals.map((proposal, index) => {
-          return (
-            <div
-              className="link"
-              style={{ textDecoration: "none" }}
-              key={index}
-              onClick={() => handleProposalClick(proposal)}
-            >
-              <div className="container">
-                {proposal.images && (
-                  <img
-                    src={`https://event-proposal-project.onrender.com/images/${proposal.images[0]}`}
-                    alt={proposal.eventName}
-                  />
-                )}
-                <div id="en">{proposal.eventName}</div>
-                <div>{proposal.budget}</div>
-                <div>{proposal.eventPlace}</div>
+              <div className="text-container">
+              <h2 id="en">{proposal.eventName}</h2>
+              <h4>{proposal.budget}</h4>
+              <p>{proposal.eventPlace}</p>
               </div>
             </div>
-          );
-        })}
+          </div>
+        );
+      })}
       </div>
     </div>
   );

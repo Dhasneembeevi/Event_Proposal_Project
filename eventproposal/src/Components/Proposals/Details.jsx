@@ -1,45 +1,42 @@
-import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import Userhead from '../User/Userhead';
+
+import {  useNavigate, useLocation } from 'react-router-dom';
+import Userhead from "../User/header/Userhead";
 
 import './details.css';
+import { Link } from 'react-router-dom'
+import Selected from './Selected';
+
 
 const Details = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const proposal = location.state?.proposal;
-  const [selected, setSelected] = useState(false);
-
-  const handleSelectClick = () => {
-    setSelected(true);
-    navigate({ pathname: "/selected", state: { selectedProposal: proposal } });
-  };
 
   return (
+    
     <div>
       <Userhead />
       {proposal && (
         <div className="main">
-          <span> Proposal {proposal.eventName} Contract </span>{' '}
-          {!selected && (
-            <button id="sel" onClick={handleSelectClick}>
-              Select{' '}
-            </button>
-          )}
+          <h4 style={{marginLeft:"5%", marginTop:"1%"}}> Proposal {proposal.eventName} Contract </h4>{' '}
+          <Link to="/selected">
+        <button id='sel'> Select </button>
+      
+        </Link>
           <div className="allproposals">
-            <div className="container" id="ven-details">
+            <div id="ven-details">
               <div id="main-ig">
                 {proposal.images && (
                   <div id="ven-img">
                     <img
                       src={`https://event-proposal-project.onrender.com/images/${proposal.images[0]}`}
-                      alt="event"
+                      alt="event" id="img"
                     />
                   </div>
                 )}
-                <div id="ven-id"> ID : 001 </div>
+                
               </div>
-
+              <div id="ven-id" > ID : 001 </div>
               <div id='details-con'> 
               
               <div id="ven-name" >Name: {proposal.eventName}</div>
@@ -56,7 +53,7 @@ const Details = () => {
             </div>
             <div id="fdp"  style={{fontSize: "larger", fontWeight:"bold"}}>Food Preferences : {proposal.foodPreferences}</div>
             <div id="mul-images"  style={{fontSize: "larger", fontWeight:"bold"}}>
-              My albums :<img src={`https://event-proposal-project.onrender.com/images/${proposal.images}`} alt="random" style={{width
+              My albums :<img src={`https://dhas-proposal-server.onrender.com/images/${proposal.images}`} alt="random" style={{width
               :"30%" , marginBottom: "10px"}}
                />
               <img src="https://media.istockphoto.com/id/1281090402/photo/happy-new-year-to-all.jpg?s=612x612&w=0&k=20&c=zJB3jPor4WyNt3cKsfmzJufmH1CueAg7Tzlk7DNZtHM=" alt="fake" style={{width
@@ -79,21 +76,9 @@ const Details = () => {
           </div>
         </div>
       )}
-      {!proposal && (
-        <div className="error">
-          No proposal found. Please go back to the{' '}
-          <span
-            className="link"
-            onClick={() => {
-              navigate('/')
-            }}
-          >
-            previous page
-          </span>
-          .
-        </div>
-      )}
+      
     </div>
+  
   );
 };
 

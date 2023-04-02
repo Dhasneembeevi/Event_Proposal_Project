@@ -10,16 +10,20 @@
 }
 .symbol{
     position: absolute;
-    right: 91%;
+    right: 89%;
+    height: 20%;
+    width: auto;
     top: 4%;
+    margin-right: -5%;
+    filter: invert(110%);
 
 }
-.formContainer{
-    position: absolute;
-    top: 200px;
-left: 950px;
+.user-registerContainer{
+    position: fixed;
+    top: 24%;
+    right: 8%;
     width: 380px;
-height: 420px;
+height: 65%;
 background: #FFFFFF 0% 0% no-repeat padding-box;
 border-radius: 8px;
 opacity: 1;
@@ -105,17 +109,21 @@ opacity: 1;
     margin-left: -50%;
     font-style: Roboto;
     color: #4E94F4;
-    margin-bottom: -20%;
+    position: absolute;
+    top: 90%;
+    
 }
 
 .login-user:hover{
  color: #1b5ab2;
  cursor: pointer;
 }
-.sign-in{
+.register-btn{
     height: 2rem;
     width:6rem;
-    margin-left:-30%;
+    position: absolute;
+    top: 90%;
+    left: 65%;
     background: #4E94F4 0% 0% no-repeat padding-box;
   border-radius: 8px;
   color: aliceblue;

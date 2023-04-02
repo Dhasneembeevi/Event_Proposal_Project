@@ -37,11 +37,8 @@ const CreateProposals = () => {
       for (let image of images) {
         formdata.append('images', image)
       }
-      
-      await axios.post('https://event-proposal-project.onrender.com/createproposals', formdata
-)
-      
-        navigate('/events')
+      await axios.post('https://dhas-proposal-server.onrender.com/createproposals', formdata)
+      navigate('/events')
   
     } catch (err) {
       console.log(err);

@@ -2,12 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import img2 from "../../Assets/logo.jpg";
+import logoimg from "../../Assets/File-01.svg"
 import img1 from "../../Assets/bg party.jpg";
 import "./userregister.css"
 import Swal from "sweetalert2";
 
-// vendor has to register 
+
 
 const Register = () => {
   const [data, updatereg] = useState({ username: "" ,email: "" , contact :"",password: "" , confirmPassword:""})
@@ -27,7 +27,7 @@ const Register = () => {
     formdata.append("contact", data.contact)
     formdata.append("password", data.password);
     formdata.append("confirmpassword", data.confirmPassword)
-    const response = await fetch("https://event-proposal-project.onrender.com/registeruser", {
+    const response = await fetch("https://dhas-proposal-server.onrender.com/registeruser", {
       method: 'POST',
       body: formdata
     })
@@ -50,9 +50,7 @@ const Register = () => {
     }
   }
 }
-// const handle = () =>{
-//   navigate("/loginuser")
-// }
+
 const handleSymbol =()=>{
   navigate("/loginvendor")
 }
@@ -60,28 +58,28 @@ const handleSymbol =()=>{
 
     <div className='register-container'>
     <img src={img1} alt='party' className='party'/>
-  <img src={img2} alt='symbol' onClick={handleSymbol} className='symbol'/> 
-  <div className="registerContainer">
+  <img src={logoimg} alt='symbol' onClick={handleSymbol} className='symbol'/> 
+  <div className="user-registerContainer">
   <Link to="/registervendor" ><button className='vendor-btn'>Vendor</button></Link>
   <Link to="/registeruser"><button className='user-btn'>User</button> </Link>
 
   <div className='signup-text'>Register in Your Account </div>
   <div className='input-box' >     
-  <input type="text" placeholder='Name' className='phone-input' value={data.username} onChange={(e) => { updatereg({ ...data, username: e.target.value }) }} />
+  <input type="text" placeholder='Name..' className='phone-input' value={data.username} onChange={(e) => { updatereg({ ...data, username: e.target.value }) }} />
 
 
-    <input type="email" placeholder='Email' className="email-input" value={data.email} onChange={(e) => { updatereg({ ...data, email: e.target.value }) }}/>
+    <input type="email" placeholder='Email..' className="email-input" value={data.email} onChange={(e) => { updatereg({ ...data, email: e.target.value }) }}/>
     
     
-    <input type= "number" placeholder='Contact'  value={data.contact} onChange={(e)=>{ updatereg({...data, contact: e.target.value})}} className="email-input"/>
+    <input type= "tel" placeholder='Contact..'  value={data.contact} onChange={(e)=>{ updatereg({...data, contact: e.target.value})}} className="email-input"/>
 
-    <input type="password" placeholder='Password' className='password-input' value={data.password} onChange={(e) => { updatereg({ ...data, password: e.target.value }) }}/>
+    <input type="password" placeholder='Password..' className='password-input' value={data.password} onChange={(e) => { updatereg({ ...data, password: e.target.value }) }}/>
 
-    <input type="password" placeholder='Confirm Password' className='confirm-password-input' value={data.confirmPassword} onChange={(e) => { updatereg({ ...data, confirmPassword: e.target.value }) }}/>
+    <input type="password" placeholder='Confirm Password..' className='confirm-password-input' value={data.confirmPassword} onChange={(e) => { updatereg({ ...data, confirmPassword: e.target.value }) }}/>
  
 
 <Link to="/loginuser" className='login-user'  >Login </Link>
-<span > <button onClick={handlereg} className="register" >REGISTER </button></span>
+<span > <button onClick={handlereg} className="register-btn" >REGISTER </button></span>
 
     {msg}
      </div>      
