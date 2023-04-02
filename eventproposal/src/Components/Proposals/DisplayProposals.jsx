@@ -1,69 +1,61 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Userhead from "../User/Userhead";
+import Userhead from "../User/header/Userhead";
 import "./display.css";
+//import img5 from "../../Assets/mainpage.jpg"
 
 const DisplayProposals = () => {
   const [proposals, setProposals] = useState([]);
   const [selectedProposal, setSelectedProposal] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState(false)
   const navigate = useNavigate();
+  
 
-  useEffect(() => {
-    fetch("https://event-proposal-project.onrender.com/allproposals")
+  const fetchProposals = async () => {
+    fetch("https://dhas-proposal-server.onrender.com/allproposals")
       .then((res) => res.json())
       .then((data) => {
         setProposals(data.proposals);
       })
       .catch((err) => console.log(err));
-  }, []);
+  };
 
   const handleProposalClick = (proposal) => {
     setSelectedProposal(proposal);
     navigate("/details", { state: { proposal: proposal } });
   };
+ 
+
+useEffect(()=>{
+  fetchProposals();
+},[])
 
   return (
     <div>
       <Userhead />
+      <img src="https://img.freepik.com/free-vector/party-crowd-silhouettes-dancing-nightclub_1048-11557.jpg" alt="main" id="main"/>
       <div className="allproposals">
-        {selectedProposal && (
-          <div className="selected">
-            <div className="container">
-              {selectedProposal.images && (
-                <img
-                  src={`https://event-proposal-project.onrender.com/images/${selectedProposal.images[0]}`}
-                  alt={selectedProposal.eventName}
-                />
-              )}
-              <div id="en">{selectedProposal.eventName}</div>
-              <div>{selectedProposal.budget}</div>
-              <button
-                onClick={() => {
-                  setSelectedProposal(null);
-                }}
-              >
-                Clear Selection
-              </button>
-            </div>
-          </div>
-        )}
+        
         {proposals.map((proposal, index) => {
           return (
             <div
-              className="link"
+              className="card-container"
               style={{ textDecoration: "none" }}
               key={index}
               onClick={() => handleProposalClick(proposal)}
             >
-              <div className="container">
+              <div className="img-container">
                 {proposal.images && (
                   <img
-                    src={`https://event-proposal-project.onrender.com/images/${proposal.images[0]}`}
-                    alt={proposal.eventName}
+                    src={`https://dhas-proposal-server.onrender.com/images/${proposal.images[0]}`}
+                    alt={proposal.eventName} className="eventpic"
                   />
                 )}
-                <div id="en">{proposal.eventName}</div>
-                <div>{proposal.budget}</div>
+                <div className="text-container">
+                <h2 id="en">{proposal.eventName}</h2>
+                <h4>{proposal.budget}</h4>
+                <p>{proposal.eventPlace}</p>
+                </div>
               </div>
             </div>
           );
@@ -74,3 +66,4 @@ const DisplayProposals = () => {
 };
 
 export default DisplayProposals;
+
