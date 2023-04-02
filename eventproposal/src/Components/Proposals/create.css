@@ -5,8 +5,8 @@
 
 .proposal-form-container {
   width: 80vw;
-  height: 110vh;
-  
+  height: 90vh;
+
   margin:  auto;
   border: var(--border);
   border-radius: 12px;
@@ -93,8 +93,7 @@
 .proposal-form-btn-container {
   display: flex;
   justify-content: center;
-  border-top: 1px solid #CCCCCC;
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 .proposal-form-btn-container>button {
@@ -127,14 +126,7 @@ input[type='file'] {
   padding: 0.5em 1em;
   margin-right: 10%;
 } 
-/* .add-btn {
-  float: right;
-  border: 1px solid #0078DD;
-  color: #006BD9;
-  border-radius: 4px;
-  font-size: 0.7rem;
-  padding: 0.5em 1em;
-} */
+
 
 .add-btn:hover{
   background-color: #72e1eb;

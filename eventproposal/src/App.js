@@ -12,11 +12,15 @@ import Details from './Components/Proposals/Details';
 import Events from './Components/Proposals/Events';
 import Eventheader from './Components/Proposals/Eventheader';
 import Selected from './Components/Proposals/Selected';
+import { useState } from 'react';
+import UserContext from './Components/UserContext';
+import Update from './Components/Proposals/Update'
 
 function App() {
+  const [username, setUsername] =  useState("");
   return (
     <div>
-     
+     <UserContext.Provider value={{username,setUsername}}>
       <Router>
 
         <Routes >
@@ -29,10 +33,13 @@ function App() {
           <Route path='/createproposals' element={<CreateProposals />} />
           <Route path='/details' element={<Details />} />
           <Route path='/events' element={<Events />} />
+          <Route path='/update' element={<Update />} />
           <Route path='/eventheader' element={<Eventheader />} />
           <Route path='/selected' element={<Selected />} />
         </Routes>
       </Router>
+      </UserContext.Provider>
+   
     </div>
 
 

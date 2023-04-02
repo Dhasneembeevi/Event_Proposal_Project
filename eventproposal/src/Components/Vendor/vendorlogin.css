@@ -10,14 +10,18 @@
 }
 .symbol{
     position: absolute;
-    right: 91%;
+    right: 89%;
+    height: 20%;
+    width: auto;
     top: 4%;
+    margin-right: -5%;
+    filter: invert(110%);
 
 }
-.formContainer{
-    position: absolute;
-    top: 200px;
-left: 950px;
+#vendor-formContainer{
+    position: fixed;
+    top: 35%;
+right:9%;
     width: 380px;
 height: 420px;
 background: #FFFFFF 0% 0% no-repeat padding-box;
@@ -115,7 +119,8 @@ opacity: 1;
     height: 2rem;
     width:6rem;
     position: fixed;
-    left: 110%;
+
+   right: 11%;
     background: #4E94F4 0% 0% no-repeat padding-box;
   border-radius: 8px;
   color: aliceblue;

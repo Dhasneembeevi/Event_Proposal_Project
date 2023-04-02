@@ -1,97 +1,132 @@
-.ev {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  #events-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    width: 90%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  #ename {
-    font-size: 24px;
-    font-weight: bold;
-    margin-right: 90%;
-  }
-  
-  #damn {
-    margin: 10px 0;
-    margin-right: 90%;
-  }
-  
-  #et {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 10px 0;
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  .proty {
-    margin-left: 10px;
-  }
-  
-  .fdate {
-    margin-left: 10px;
-  }
-  
-  .tdate {
-    margin-left: 10px;
-  }
-  
-  #bud {
-    margin-left: 10px;
-  }
-  
-  #fi-ev {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  
-  #icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 92%;
-  }
-  
-  #trash {
-    margin-right: 10px;
 
-    color: red;
-    cursor: pointer;
+  .filter-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
   }
   
-  #trash:hover {
-    transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
+  select {
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    appearance: none;
+    width: 200px;
+    max-width: 100%;
   }
   
-  #edit {
+  @media (max-width: 600px) {
+    select {
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+  
+  .proposal-card-container {
+    margin: 20px 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #668ebd;
+  border-radius: 4px;
+  opacity: 1;
+  width: 90%;
+  }
+  
+  .card-container:hover{
+    border:2px solid #64A1F5;
+    margin-left: 20px;
+  }
+  .l-h {
+    text-align: left;
+  font: normal normal normal 16px/18px Helvetica Neue;
+  letter-spacing: 0.48px;
+  color: #AAAAAA;
+  opacity: 1;
+  }
+  .edit {
+  background: transparent no-repeat padding-box;
+  opacity: 1;
+  }
+  .bin  {
+    background: transparent no-repeat padding-box;
+    opacity: 1;
+    color: rgb(242, 8, 8);
+  }
+  .lower-part {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 5px;
+    width: 100%;
+    position: relative;
+  }
+  .main-header {
+    text-align: left;
+  font: normal normal medium 20px/25px Helvetica Neue;
+  letter-spacing: 0.6px;
+  color: #081838;
+  opacity: 1;
+  padding-left: 1.6em;
+  padding-top: 1em;
+  }
+  .para-main {
+    padding-left: 1.93em;
+    padding-top: 0.6em;
+    letter-spacing: 0.48px;
+  }
+  .l-h {
+    padding-left: 1.93em;
+    padding-top: 1em;
+  }
+  .l-l {
+    padding-left: 1.6em;
+    padding-top: 0.2em;
+    padding-bottom: 0.81em;
+  }
+  
+  .icons{
+    position: absolute;
+    right: 0;
+    display: flex;
+  }
+  
+  .icons>div{
+    margin: 0 10px;
+    
+    padding-right: 10px;
+  }
+  .create-btn{
+    border: none;
+    outline: none;
+    background-color: #4E94F4;
+    color: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 10px;
     margin-left: 10px;
-    color: green;
-    cursor: pointer;
+    text-transform:uppercase;
+    font-size: 1.2rem;
+    padding: 0.5em 1em;
+    text-decoration: none;
   }
   
-  #edit:hover {
-    transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
+  .create-btn:hover{
+    background-color: black;
+    color: #fff;
+  }
+  
+  
+  
+  .search-bar{
+    font-weight: 1rem;
+    margin-left: 10%;
+    margin-top: 2%;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+  }
+  
+  .search-bar>.input-container>button:hover{
+    background-color: black;
+    color: #FFFFFF;
   }
